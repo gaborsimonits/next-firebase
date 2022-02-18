@@ -1,14 +1,15 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
+
+import { UserContext } from "../lib/context";
 import { Toaster } from "react-hot-toast";
 
 // import { GetServerSideProps } from "next/app";
 
-import { UserContext } from "../lib/context";
-
 function MyApp({ Component, pageProps }) {
 	return (
-		<UserContext.Provider value={{ user: {}, username: "jeff" }}>
+		// user: {}, username: "Arnot"
+		<UserContext.Provider value={{ user: {}, username: "Arnot" }}>
 			<Navbar />
 			<Component {...pageProps} />
 			<Toaster />

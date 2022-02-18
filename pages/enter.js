@@ -3,6 +3,9 @@ import { auth, googleAuthProvider } from "../lib/firebase";
 import { useContext } from "react";
 import { UserContext } from "../lib/context";
 
+import Image from "next/image";
+import googleLogo from "../public/google.png";
+
 export default function EnterPage(props) {
 	const { user, username } = useContext(UserContext);
 
@@ -33,7 +36,8 @@ function SignInButton() {
 
 	return (
 		<button className='btn-google' onClick={signInWithGoogle}>
-			<img src={"/google.png"} /> Sign in with Google
+			<Image src={googleLogo} alt={"logo"} height={30} width={30}></Image>
+			Sign in with Google
 		</button>
 	);
 }
