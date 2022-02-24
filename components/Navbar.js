@@ -4,9 +4,6 @@ import { useContext } from "react";
 import { UserContext } from "../lib/context";
 import { auth } from "../lib/firebase";
 
-import Image from "next/image";
-import whoIsTheCoon from "/public/whoisthecoon.png";
-
 // Top navbar
 export default function Navbar() {
 	const { user, username } = useContext(UserContext);
@@ -39,14 +36,7 @@ export default function Navbar() {
 							</Link>
 						</li>
 						<li>
-							<Link href={`/${username}`} passHref>
-								<Image
-									src={user?.photoURL || whoIsTheCoon}
-									alt={"logo"}
-									width={60}
-									height={60}
-								/>
-							</Link>
+							<Link href={`/${username}`}></Link>
 						</li>
 					</>
 				)}
